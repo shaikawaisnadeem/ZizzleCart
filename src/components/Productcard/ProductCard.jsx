@@ -1,21 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ProductCard.css'
-
-import { use} from 'react'
-import Reactcontext from '../ReactContext/Reactcontext.jsx';
-
+import { use } from 'react'
+import Reactcontext from '../ReactContext/Reactcontext.jsx'
+import { DotLoader } from 'react-spinners'
 
 const ProductCard = ({ product }) => {
-   
+    const { addingItem } = use(Reactcontext)
+    const passing = () => addingItem(product)
 
- 
-    const {addingItem} = use(Reactcontext);  
-    const passing = () => addingItem(product); 
+    const [imgLoaded, setImgLoaded] = useState(false)
 
     return (
         <div className="productDiv">
-            <div className="imageDiv">
-                <img src={product.images[0]} />
+            <div className="imageDiv" style={{ position: 'relative', minHeight: '200px' }}>
+                {!imgLoaded && (
+                    <div className="img-loader" style={{
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                        transform: 'translate(-50%, -50%)',
+                        zIndex: 1
+                    }}>
+                        <DotLoader  color="#2b303b" size={30} />
+                    </div>
+                )}
+                <img
+                    src={product.images[0]}
+                    alt={product.title}
+                    style={imgLoaded ? {} : { visibility: 'hidden' }}
+                    onLoad={() => setImgLoaded(true)}
+                />
             </div>
             <div className="discount">
                 <div>{`- ${product.discountPercentage}%`}</div>
@@ -33,6 +47,6 @@ const ProductCard = ({ product }) => {
             </div>
         </div>
     )
-    
 }
+
 export default ProductCard
