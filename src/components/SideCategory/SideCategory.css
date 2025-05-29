@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Sans-Serif, Poppins;
+}
+
+.sideNavbar {
+  max-width: 240px;
+  border: 2px solid #e4eaf1;
+  border-radius: 12px;
+  padding: 0 12px;
+  width: 20%;
+  display: inline-block;
+  flex-direction: column;
+  max-height: 1400px;
+}
+
+.sideNavbar .headCate {
+  color: #252a37;
+  font-size: 27px;
+  font-weight: 600;
+
+  padding: 18px;
+  padding-bottom: 12px;
+}
+
+.sideNavbar a {
+  display: block;
+  margin: 12px 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.sideNavbar a p {
+  padding: 15px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #252a37;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  margin: 0; 
+}
+
+.sideNavbar a.active p {
+  background-color: #0f172a;
+  color: white;
+}
+
+.sideNavbar a.active:hover p {
+  background-color: #272e3f;
+}
+
+.sideNavbar a:not(.active):hover p {
+  background-color: #e4eaf1;
+}
