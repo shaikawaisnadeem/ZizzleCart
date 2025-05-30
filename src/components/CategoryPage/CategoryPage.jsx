@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
 import './CategoryPage.css'
-import FilteredProducts from '../../FilteredProducts/FilteredProducts.jsx';
+import FilteredProducts from '../FilteredProducts/FilteredProducts.jsx'
 
 
 const CategoryPage = () => {

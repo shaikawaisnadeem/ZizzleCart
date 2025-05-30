@@ -21,7 +21,7 @@ const ProductCard = ({ product }) => {
                         transform: 'translate(-50%, -50%)',
                         zIndex: 1
                     }}>
-                        <DotLoader  color="#2b303b" size={30} />
+                        <DotLoader  color="#2b303b" size={20} />
                     </div>
                 )}
                 <img

@@ -5,6 +5,7 @@ import SideCategory from './components/SideCategory/SideCategory.jsx'
 import Navbar from './components/Navbar/Navbar.jsx'
 import CategoryPage from './components/CategoryPage/CategoryPage.jsx'
 import Reactcontext from './components/ReactContext/Reactcontext.jsx'
+import ErrorPage from './components/ErrorPage/ErrorPage.jsx'
 
 const App = () => {
 
@@ -25,8 +26,10 @@ const App = () => {
         <Routes>
           <Route path="/" element={<FeaturedProducts />} />
           <Route path="/category/:categoryName" element={<CategoryPage />} />
+          <Route path = '*' element={<ErrorPage />} />
         </Routes>
       </div>
+      
       </Reactcontext>
     </BrowserRouter>
   )

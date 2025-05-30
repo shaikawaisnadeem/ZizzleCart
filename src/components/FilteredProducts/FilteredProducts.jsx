@@ -1,9 +1,7 @@
 import SyncLoader from 'react-spinners/SyncLoader'
 import { useEffect, useState } from 'react'
-import ProductCard from '../components/Productcard/ProductCard.jsx'
+import ProductCard from '../Productcard/ProductCard.jsx'
 import './FilteredProducts.css'
-
-
 const FilteredProducts = ({ categoryName }) => {
     const [loader, setLoader] = useState(false);
     const [products, setProducts] = useState([]);
