@@ -7,6 +7,7 @@ import CategoryPage from './components/CategoryPage/CategoryPage.jsx'
 import Reactcontext from './components/ReactContext/Reactcontext.jsx'
 import ErrorPage from './components/ErrorPage/ErrorPage.jsx'
 import Productinfo from './components/ProductInfo/Productinfo.jsx'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop.jsx'
 
 const App = () => {
 
@@ -19,16 +20,20 @@ const App = () => {
   }
   return (
     <BrowserRouter>
+    <ScrollToTop/>
     <Reactcontext value = {{itemsInCart, addingItem: add}}>
       <Navbar/>
-      <div style={{display:"flex", margin: "20px",marginLeft:"60px",paddingTop:"80px"}}>
+       
+      <div style={{display:"flex", margin: "20px",marginLeft:"50px",paddingTop:"80px"}}>
         <SideCategory />
+       
         <Routes>
           <Route path="/" element={<FeaturedProducts />} />
           <Route path="/category/:categoryName" element={<CategoryPage />} />
           <Route path="/product/:id" element={<Productinfo />} /> 
           <Route path = '*' element={<ErrorPage />} />
         </Routes>
+        
       </div>
       
       </Reactcontext>
