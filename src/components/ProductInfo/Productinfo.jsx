@@ -31,7 +31,7 @@ const Productinfo = () => {
   <div className='loaderInfo'>
     <HashLoader color="#2b303b" size={70} />
   </div>
-) : (
+) : (                                                                                 
   <div className='mainDivContainer'>
     <div className="product-container">
     <div className="product-image">
