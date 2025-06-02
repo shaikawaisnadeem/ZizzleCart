@@ -56,6 +56,7 @@ const Productinfo = () => {
         <button className="button add-to-cart">Add to Cart</button>
         <button className="button add-to-wishlist">Add to Wishlist</button>
       </div>
+      <h2 className='impMsg'>Like it? Add it to your cart and make it yours!</h2>
     </div>
   </div>
    <ProductReview product={product}/>

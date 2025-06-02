@@ -24,7 +24,7 @@ const App = () => {
     <Reactcontext value = {{itemsInCart, addingItem: add}}>
       <Navbar/>
        
-      <div style={{display:"flex", margin: "20px",marginLeft:"50px",paddingTop:"80px"}}>
+      <div style={{display:"flex", margin: "20px",marginLeft:"25px",paddingTop:"80px"}}>
         <SideCategory />
        
         <Routes>
