@@ -1,17 +1,23 @@
 import React, { useState } from 'react'
 import './ProductCard.css'
+import { useNavigate } from 'react-router-dom'
 import { use } from 'react'
 import Reactcontext from '../ReactContext/Reactcontext.jsx'
 import { DotLoader } from 'react-spinners'
 
 const ProductCard = ({ product }) => {
     const { addingItem } = use(Reactcontext)
-    const passing = () => addingItem(product)
-
+    const navigate = useNavigate()
     const [imgLoaded, setImgLoaded] = useState(false)
-
+    const innerInfo = () => {
+        navigate(`/product/${product.id}`)
+    }
+    const passing = (e) => {
+        e.stopPropagation()
+        addingItem(product)
+    }
     return (
-        <div className="productDiv">
+        <div className="productDiv" onClick={innerInfo}>
             <div className="imageDiv" style={{ position: 'relative', minHeight: '200px' }}>
                 {!imgLoaded && (
                     <div className="img-loader" style={{

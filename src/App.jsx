@@ -6,6 +6,7 @@ import Navbar from './components/Navbar/Navbar.jsx'
 import CategoryPage from './components/CategoryPage/CategoryPage.jsx'
 import Reactcontext from './components/ReactContext/Reactcontext.jsx'
 import ErrorPage from './components/ErrorPage/ErrorPage.jsx'
+import Productinfo from './components/ProductInfo/Productinfo.jsx'
 
 const App = () => {
 
@@ -16,7 +17,6 @@ const App = () => {
     setItem(array);
 
   }
-
   return (
     <BrowserRouter>
     <Reactcontext value = {{itemsInCart, addingItem: add}}>
@@ -26,6 +26,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<FeaturedProducts />} />
           <Route path="/category/:categoryName" element={<CategoryPage />} />
+          <Route path="/product/:id" element={<Productinfo />} /> 
           <Route path = '*' element={<ErrorPage />} />
         </Routes>
       </div>
