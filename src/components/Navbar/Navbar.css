@@ -1,19 +1,20 @@
-
 .custom-navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 0.75rem 2rem;
+  padding: 12px 32px;          
   position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
+  width: 100vw;              
   z-index: 999;
+  box-sizing: border-box;     
 }
 
 .navbar-brand {
-  font-size: 1.5rem;
+  font-size: 24px;           
   font-weight: bold;
   color: #333;
   text-decoration: none;
@@ -30,17 +31,17 @@
 }
 
 .searchbar {
-  padding: 0.5rem;
+  padding: 8px;              
   width: 100%;
   max-width: 300px;
   border: 1px solid #ccc;
   border-radius: 4px;
   outline: none;
-  font-size: 1rem;
+  font-size: 16px;            
 }
 
 .search-button {
-  padding: 0.5rem 1rem;
+  padding: 8px 16px;         
   background-color: #000;
   color: #fff;
   border: none;
@@ -56,53 +57,27 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-left: 1.5rem;
-}
-
-.cart-icon {
-  font-size: 1.25rem;
-  color: #333;
-  text-decoration: none;
-  margin-right: 0.5rem;
-}
-
-.login-button {
-  padding: 0.5rem 1rem;
-  background-color: transparent;
-  border: 1px solid #007bff;
-  color: #007bff;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.login-button:hover {
-  background-color: #007bff;
-  color: white;
-}
-
-.nav-buttons {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-left: 1.5rem;
+  margin-left: 24px;         
 }
 
 .icon-wrapper {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 1.25rem;
+  gap: 8px;                  
+  font-size: 20px;           
   color: #333;
   text-decoration: none;
-  margin-right: 0.5rem;
+  margin-right: 8px;
   transition: color 0.2s ease;
+  cursor: pointer;            
 }
 
 .icon-wrapper:hover {
   color: #4677ab;
 }
+
 .login-button {
-  padding: 0.5rem 1rem;
+  padding: 8px 16px;
   background-color: transparent;
   border: 1px solid #007bff;
   color: #007bff;
