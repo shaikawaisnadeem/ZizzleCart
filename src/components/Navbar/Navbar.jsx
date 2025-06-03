@@ -1,34 +1,38 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Navbar.css';
-import { useNavigate } from 'react-router-dom'
-import { use } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ProductSearch from '../ProdcuctSearch/ProductSearch.jsx';
 
 const Navbar = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+
   const addCart = () => {
-    navigate('/AddToCart')
-  }
+    navigate('/AddToCart');
+  };
+
+  const openWishlist = () => {
+    navigate('/wishlist');
+  };
+
   return (
-    <>
-      <nav className="custom-navbar">
-        <a className="navbar-brand" href="#">ZizzleCart</a>
+    <nav className="custom-navbar">
+      <a className="navbar-brand" href="#">ZizzleCart</a>
 
-        <div className="search-container">
-          <input type="search" className="searchbar" placeholder="Search Products..."  />
-          <button className="search-button">Search</button>
-        </div>
+      <div className="search-container">
+        <input type="search" className="searchbar" placeholder="Search Products..." />
+        <button className="search-button">Search</button>
+      </div>
 
-        <div className="nav-buttons">
-          <a href="#" className="cart-icon" onClick={addCart}>
-            <i className="bi bi-cart3"></i>
-          </a>
-          <button className="login-button">Login</button>
-          <button className="register-button">Register</button>
-        </div>
-      </nav>
-    </>
-
+      <div className="nav-buttons">
+        <a href="#" className="icon-wrapper" onClick={addCart}>
+          <i className="bi bi-cart3"></i>
+        </a>
+        <a href="#" className="icon-wrapper" onClick={openWishlist}>
+          <i className="bi bi-heart"></i>
+        </a>
+        <button className="login-button">Login</button>
+      </div>
+    </nav>
   );
 };
 

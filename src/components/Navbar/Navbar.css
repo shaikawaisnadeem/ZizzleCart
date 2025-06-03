@@ -75,20 +75,43 @@
   cursor: pointer;
 }
 
-.register-button {
-  padding: 0.5rem 1rem;
-  background-color: #007bff;
-  border: none;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
 .login-button:hover {
   background-color: #007bff;
   color: white;
 }
 
-.register-button:hover {
-  background-color: #0056b3;
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 1.5rem;
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  color: #333;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.icon-wrapper:hover {
+  color: #4677ab;
+}
+.login-button {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 1px solid #007bff;
+  color: #007bff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.login-button:hover {
+  background-color: #007bff;
+  color: #fff;
 }
