@@ -108,7 +108,6 @@ const [loader, setLoader] = useState(false);
             setWomensJewellery(womensJewelleryData.products.slice(0, 4));
             setSunglasses(sunglassesData.products.slice(0, 4));
             setAutomotive(automotiveData.products.slice(0, 4));
-            setMotorcycle(motorcycleData.products.slice(0, 4));
             setLighting(lightingData.products.slice(0, 4));
         }
             catch (error) {

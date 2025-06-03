@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom'
 import { useState } from 'react';
 import { HashLoader } from 'react-spinners';
 import ProductReview from '../ProductReview/ProductReview';
+import { useContext } from 'react';
+import ReactContext from '../../Context/ReactContext';
 
 
 
@@ -11,6 +13,10 @@ const Productinfo = () => {
   const { id } = useParams()
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(false);
+  const {add}  = useContext(ReactContext)
+  const addingProductToCart = ()=>{
+    add(product)
+  }
    useEffect(() => {
     setLoading(true)
     const infodata = async () => {
@@ -53,7 +59,7 @@ const Productinfo = () => {
       </div>
 
       <div className="buttons">
-        <button className="button add-to-cart">Add to Cart</button>
+        <button className="button add-to-cart" onClick={addingProductToCart}>Add to Cart</button>
         <button className="button add-to-wishlist">Add to Wishlist</button>
       </div>
       <h2 className='impMsg'>Like it? Add it to your cart and make it yours!</h2>

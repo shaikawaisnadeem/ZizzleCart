@@ -12,17 +12,17 @@ const SideCategory = () => {
       <NavLink to="/category/fragrances" className={({ isActive }) => isActive ? "active" : ""}><p>Fragrances</p></NavLink>
       <NavLink to="/category/skincare" className={({ isActive }) => isActive ? "active" : ""}><p>Skincare</p></NavLink>
       <NavLink to="/category/groceries" className={({ isActive }) => isActive ? "active" : ""}><p>Groceries</p></NavLink>
-      <NavLink to="/category/home-decoration" className={({ isActive }) => isActive ? "active" : ""}><p>Home-decoration</p></NavLink>
+      <NavLink to="/category/home-decoration" className={({ isActive }) => isActive ? "active" : ""}><p>Home Decoration</p></NavLink>
       <NavLink to="/category/furniture" className={({ isActive }) => isActive ? "active" : ""}><p>Furniture</p></NavLink>
       <NavLink to="/category/tops" className={({ isActive }) => isActive ? "active" : ""}><p>Tops</p></NavLink>
-      <NavLink to="/category/womens-dresses" className={({ isActive }) => isActive ? "active" : ""}><p>Womens-dresses</p></NavLink>
-      <NavLink to="/category/womens-shoes" className={({ isActive }) => isActive ? "active" : ""}><p>Womens-shoes</p></NavLink>
-      <NavLink to="/category/mens-shirts" className={({ isActive }) => isActive ? "active" : ""}><p>Mens-shirts</p></NavLink>
-      <NavLink to="/category/mens-shoes" className={({ isActive }) => isActive ? "active" : ""}><p>Mens-shoes</p></NavLink>
-      <NavLink to="/category/mens-watches" className={({ isActive }) => isActive ? "active" : ""}><p>Mens-watches</p></NavLink>
-      <NavLink to="/category/womens-watches" className={({ isActive }) => isActive ? "active" : ""}><p>Womens-watches</p></NavLink>
-      <NavLink to="/category/womens-bags" className={({ isActive }) => isActive ? "active" : ""}><p>Womens-bags</p></NavLink>
-      <NavLink to="/category/womens-jewellery" className={({ isActive }) => isActive ? "active" : ""}><p>Womens-jewellery</p></NavLink>
+      <NavLink to="/category/womens-dresses" className={({ isActive }) => isActive ? "active" : ""}><p>Womens Dresses</p></NavLink>
+      <NavLink to="/category/womens-shoes" className={({ isActive }) => isActive ? "active" : ""}><p>Womens Shoes</p></NavLink>
+      <NavLink to="/category/mens-shirts" className={({ isActive }) => isActive ? "active" : ""}><p>Mens Shirts</p></NavLink>
+      <NavLink to="/category/mens-shoes" className={({ isActive }) => isActive ? "active" : ""}><p>Mens Shoes</p></NavLink>
+      <NavLink to="/category/mens-watches" className={({ isActive }) => isActive ? "active" : ""}><p>Mens watches</p></NavLink>
+      <NavLink to="/category/womens-watches" className={({ isActive }) => isActive ? "active" : ""}><p>Womens Watches</p></NavLink>
+      <NavLink to="/category/womens-bags" className={({ isActive }) => isActive ? "active" : ""}><p>Womens Bags</p></NavLink>
+      <NavLink to="/category/womens-jewellery" className={({ isActive }) => isActive ? "active" : ""}><p>Womens Jewellery</p></NavLink>
       <NavLink to="/category/sunglasses" className={({ isActive }) => isActive ? "active" : ""}><p>Sunglasses</p></NavLink>
       <NavLink to="/category/automotive" className={({ isActive }) => isActive ? "active" : ""}><p>Automotive</p></NavLink>
       <NavLink to="/category/lighting" className={({ isActive }) => isActive ? "active" : ""}><p>Lighting</p></NavLink>

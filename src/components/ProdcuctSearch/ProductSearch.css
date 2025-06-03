@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  padding: 20px;
+  color: #1f2937;
+}
+
+.searchDropdownDiv {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.funnelDiv {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.funnelDiv i {
+  font-size: 22px;
+  color: #4b5563;
+}
+
+.funnelDiv h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.productSearchResults {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 15px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.searchLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: auto;
+}
+
+.searchLeft i {
+  font-size: 20px;
+  color: #4b5563;
+}
+
+.searchLeft h2 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.searchLeft p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.rightHead {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rightHead h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.rightHead p {
+  background-color: #ffedd5;
+  color: #b45309;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .productSearchResults {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .rightHead {
+    justify-content: flex-start;
+    width: 100%;
+  }
+}

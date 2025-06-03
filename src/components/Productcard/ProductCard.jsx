@@ -1,22 +1,22 @@
-import React, { useState } from 'react'
+import  { useState,React,  useContext} from 'react'
 import './ProductCard.css'
 import { useNavigate } from 'react-router-dom'
-import { use } from 'react'
-import Reactcontext from '../ReactContext/Reactcontext.jsx'
 import { DotLoader } from 'react-spinners'
+import ReactContext from '../../Context/ReactContext'
 
 const ProductCard = ({ product }) => {
-    const { addingItem } = use(Reactcontext)
+    const {add} = useContext(ReactContext)
     const navigate = useNavigate()
     const [imgLoaded, setImgLoaded] = useState(false)
     const innerInfo = () => {
         navigate(`/product/${product.id}`)
     }
-    const passing = (e) => {
-        e.stopPropagation()
-        addingItem(product)
+    const addingProduct = (e)=>{
+        e.stopPropagation();
+        add(product)
     }
     return (
+        
         <div className="productDiv" onClick={innerInfo}>
             <div className="imageDiv" style={{ position: 'relative', minHeight: '200px' }}>
                 {!imgLoaded && (
@@ -49,7 +49,7 @@ const ProductCard = ({ product }) => {
             </div>
             <div className="priceBuy">
                 <p>{`$${product.price}`}</p>
-                <div><button onClick={passing}>Add to Cart</button></div>
+                <div><button onClick={(e)=>addingProduct(e)}>Add to Cart</button></div>
             </div>
         </div>
     )
