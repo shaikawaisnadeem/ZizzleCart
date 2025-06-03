@@ -5,6 +5,7 @@ import { DotLoader } from 'react-spinners'
 import ReactContext from '../../Context/ReactContext'
 
 const ProductCard = ({ product }) => {
+    const [clicked, setClicked] = useState(false)
     const {add} = useContext(ReactContext)
     const navigate = useNavigate()
     const [imgLoaded, setImgLoaded] = useState(false)
@@ -14,6 +15,11 @@ const ProductCard = ({ product }) => {
     const addingProduct = (e)=>{
         e.stopPropagation();
         add(product)
+        setClicked(true)
+    }
+    const gotoBag = (e)=>{
+        e.stopPropagation()
+        navigate('/AddToCart')
     }
     return (
         
@@ -49,7 +55,8 @@ const ProductCard = ({ product }) => {
             </div>
             <div className="priceBuy">
                 <p>{`$${product.price}`}</p>
-                <div><button onClick={(e)=>addingProduct(e)}>Add to Cart</button></div>
+                {clicked?<div><button onClick={gotoBag}>Go To Bag</button></div>: <div><button onClick={(e)=>addingProduct(e)}>Add to Cart</button></div> }
+                
             </div>
         </div>
     )
