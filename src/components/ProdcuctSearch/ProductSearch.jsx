@@ -1,31 +1,9 @@
-import React from 'react';
-import './ProductSearch.css';
+import React from 'react'
 
-const ProductSearch = ({ product  }) => {
+const ProductSearch = () => {
   return (
-    <div className="searchDropdownDiv">
-      <div className="funnelDiv">
-        <i className="bi bi-funnel"></i>
-        <h2>Search Results</h2>
-      </div>
+    <div>ProductSearch</div>
+  )
+}
 
-      {product.map((product, index) => (
-        <div className="productSearchResults" key={index}>
-          <div className="searchLeft">
-            <i className="bi bi-box"></i>
-            <div>
-              <h2>{product.title}</h2>
-              <p>In {product.category}</p>
-            </div>
-          </div>
-          <div className="rightHead">
-            <h2>${product.price}</h2>
-            <p>{product.category}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-};
-
-export default ProductSearch;
+export default ProductSearch

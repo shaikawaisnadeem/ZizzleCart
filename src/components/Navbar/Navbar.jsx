@@ -1,7 +1,6 @@
 import React, { useCallback, useContext } from 'react';
 import './Navbar.css';
 import { useNavigate } from 'react-router-dom';
-import ProductSearch from '../ProdcuctSearch/ProductSearch.jsx';
 import ReactContext from '../../Context/ReactContext.jsx';
 
 const Navbar = () => {
@@ -23,7 +22,7 @@ const Navbar = () => {
       <div className="search-container">
         <input type="search" className="searchbar" placeholder="Search Products..." />
         <button className="search-button">Search</button>
-      </div>
+      </div> 
 
       <div className="nav-buttons">
         <a href="#" className="icon-wrapper" onClick={addCart}>
