@@ -5,8 +5,10 @@ import { DotLoader } from 'react-spinners'
 import ReactContext from '../../Context/ReactContext'
 
 const ProductCard = ({ product }) => {
-    const [clicked, setClicked] = useState(false)
-    const {add} = useContext(ReactContext)
+    const {add,itemsinCart} = useContext(ReactContext)
+    // console.log(itemsinCart)
+    const productFound = itemsinCart.find(each => each.id === product.id)
+    console.log(product)
     const navigate = useNavigate()
     const [imgLoaded, setImgLoaded] = useState(false)
     const innerInfo = () => {
@@ -15,12 +17,17 @@ const ProductCard = ({ product }) => {
     const addingProduct = (e)=>{
         e.stopPropagation();
         add(product)
-        setClicked(true)
+        
     }
+    
+    const cartMsg = productFound? 'Go To Cart' : 'Add To Cart'
     const gotoBag = (e)=>{
+        if (cartMsg==='Go To Cart'){
         e.stopPropagation()
         navigate('/AddToCart')
+        }
     }
+    
     return (
         
         <div className="productDiv" onClick={innerInfo}>
@@ -55,7 +62,7 @@ const ProductCard = ({ product }) => {
             </div>
             <div className="priceBuy">
                 <p>{`$${product.price}`}</p>
-                {clicked?<div><button onClick={gotoBag}>Go To Bag</button></div>: <div><button onClick={(e)=>addingProduct(e)}>Add to Cart</button></div> }
+                <div><button onClick={cartMsg==='Go To Cart'? gotoBag: addingProduct}>{cartMsg}</button></div> 
                 
             </div>
         </div>

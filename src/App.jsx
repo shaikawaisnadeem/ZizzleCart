@@ -23,7 +23,8 @@ const App = () => {
           : item
       );
     } else {
-      return [...prevItems, { ...product, quantity: 1 }];
+      console.log(itemsinCart)
+      return [...prevItems, { ...product, quantity: 1,clicked:true}];
     }
   });
 };
