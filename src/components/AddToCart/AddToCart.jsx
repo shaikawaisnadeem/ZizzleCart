@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import ReactContext from '../../Context/ReactContext';
 import './AddToCart.css';
 
 const AddToCart = () => {
   const { itemsinCart, add } = useContext(ReactContext);
-
+  const [quantity, setQuantity] = useState(1)
   const increament = (product) => {
     add(product);
   };
@@ -24,13 +24,15 @@ const AddToCart = () => {
               <div className="cartTextInfo">
                 <p>{product.category}</p>
                 <h1>{product.title}</h1>
-                <h2>$ {product.price * product.quantity}</h2>
+                <h2>$ {(product.price * quantity).toFixed(2)}</h2>
               </div>
             </div>
             <div className="cartRemoveIcon">
               <i className="bi bi-trash3"></i>
-              <p className='quantityProduct'>Quantity: {product.quantity}</p>
-              <p className='increment-button' onClick={() => increament(product)}>+1</p>
+              {/* <p className='quantityProduct'>Quantity: {product.quantity}</p> */}
+              <p className='quantityProduct'>Quantity: <input type='number' className='quantityInput' onChange={(e)=>setQuantity(e.target.value) } value={quantity}/></p>
+              {/* <p className='increment-button' onClick={() => increament(product)}>+1</p> */}
+              
             </div>
           </div>
         ))

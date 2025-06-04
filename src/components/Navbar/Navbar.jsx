@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   const openWishlist = () => {
-    navigate('/wishlist');
+    navigate('/WishList');
   };
 
   return (
@@ -28,7 +28,7 @@ const Navbar = () => {
           <i className="bi bi-cart3"></i>
         </a>
         <a href="#" className="icon-wrapper" onClick={openWishlist}>
-          <i className="bi bi-heart"></i>
+          <i className="bi bi-heart"  ></i>
         </a>
         <button className="login-button">Login</button>
       </div>

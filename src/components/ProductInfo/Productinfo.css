@@ -86,8 +86,29 @@ background-color: #273042;
 
 .add-to-wishlist {
 background-color: #fff;
+
+
 color: #272e3f;
+
 border: 2px solid #272e3f;
+
+}
+
+.remove-to-wishlist {
+  background-color: #f96969;        /* Soft red/pink background */
+  border: 2px solid #c25542;        /* Darker red border */
+  color: white;                     /* White text */
+  padding: 8px 16px;                /* Some padding for better size */
+  font-weight: bold;                /* Make text stand out */
+  border-radius: 6px;               /* Slightly rounded corners */
+  cursor: pointer;                  /* Cursor changes to pointer on hover */
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
+}
+
+.remove-to-wishlist:hover {
+  background-color: #c25542;        /* Darker background on hover */
+  border-color: #a03d2f;            /* Even darker border on hover */
+  color: #fff;                     /* Keep text white */
 }
 
 .add-to-wishlist:hover {

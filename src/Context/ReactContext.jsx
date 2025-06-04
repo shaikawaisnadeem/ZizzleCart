@@ -1,6 +1,8 @@
 import {createContext} from 'react'
 const ReactContext= createContext({
     itemsinCart: [],
-    addingItem: ()=>{}
+    addingItem: ()=>{},
+    itemsInList: [],
+    addingIteminWish: ()=>{}, 
 });
 export default ReactContext

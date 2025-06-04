@@ -5,10 +5,10 @@ import { DotLoader } from 'react-spinners'
 import ReactContext from '../../Context/ReactContext'
 
 const ProductCard = ({ product }) => {
-    const {add,itemsinCart} = useContext(ReactContext)
+    const {add,itemsinCart,wishadd,itemsinwish} = useContext(ReactContext)
     // console.log(itemsinCart)
     const productFound = itemsinCart.find(each => each.id === product.id)
-    console.log(product)
+    const wishFound = itemsinwish.find(eachs=>eachs.id === product.id)
     const navigate = useNavigate()
     const [imgLoaded, setImgLoaded] = useState(false)
     const innerInfo = () => {
@@ -17,7 +17,6 @@ const ProductCard = ({ product }) => {
     const addingProduct = (e)=>{
         e.stopPropagation();
         add(product)
-        
     }
     
     const cartMsg = productFound? 'Go To Cart' : 'Add To Cart'
@@ -27,6 +26,11 @@ const ProductCard = ({ product }) => {
         navigate('/AddToCart')
         }
     }
+    const wishAdd = (e)=>{
+        e.stopPropagation()
+        wishadd(product)
+    }
+    const classWish = wishFound? 'bi bi-heart-fill' : 'bi bi-heart'
     
     return (
         
@@ -53,8 +57,8 @@ const ProductCard = ({ product }) => {
             <div className="discount">
                 <div>{`- ${product.discountPercentage}%`}</div>
             </div>
-            <div className="iconDiv">
-                <i className="bi bi-heart"></i>
+            <div className="iconDiv ">
+                <i className={classWish} onClick={wishAdd}></i>
             </div>
             <div className="content">
                 <h1>{product.title}</h1>
