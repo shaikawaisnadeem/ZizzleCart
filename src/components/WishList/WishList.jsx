@@ -11,7 +11,7 @@ const WishList = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setwishLoader(false);
-    }, 500);
+    }, 300);
     return () => clearTimeout(timer);
   }, []);
 

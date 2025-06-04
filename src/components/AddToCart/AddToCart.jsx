@@ -4,7 +4,7 @@ import './AddToCart.css';
 import { MoonLoader } from 'react-spinners';
 
 const AddToCart = () => {
-  const { itemsinCart } = useContext(ReactContext);
+  const { itemsinCart,setItemsInCart } = useContext(ReactContext);
   const [cartLoader, setCartLoader] = useState(true);
 
   const [quantities, setQuantities] = useState({});
@@ -12,8 +12,12 @@ const AddToCart = () => {
   useEffect(() => {
     setTimeout(() => {
       setCartLoader(false);
-    }, 500);
+    }, 300);
   }, []);
+ const deleteItemFromCart = (productId) => {
+  const updatedItems = itemsinCart.filter(item => item.id !== productId);
+  setItemsInCart(updatedItems);
+};
 
   const handleQuantityChange = (productId, value) => {
     const updatedQuantities = { ...quantities };
@@ -53,7 +57,7 @@ const AddToCart = () => {
               </div>
 
               <div className="cartRemoveIcon">
-                <i className="bi bi-trash3"></i>
+                <i className="bi bi-trash3" onClick={() => deleteItemFromCart(product.id)}></i>
                 <p className="quantityProduct">
                   Quantity:
                   <input

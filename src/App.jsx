@@ -46,7 +46,7 @@ console.log(itemsinwish)
   return (
     
     <BrowserRouter>
-       <ReactContext.Provider value = {{itemsinCart, add,itemsinwish,wishadd}}>
+       <ReactContext.Provider value={{ itemsinCart, setItemsInCart, add, itemsinwish, wishadd }}>
     <ScrollToTop/>
       <Navbar/>
       <div style={{display:"flex", margin: "20px",marginLeft:"25px",paddingTop:"80px"}}>
