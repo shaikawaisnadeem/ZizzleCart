@@ -4,65 +4,74 @@ import './AddToCart.css';
 import { MoonLoader } from 'react-spinners';
 
 const AddToCart = () => {
-  const { itemsinCart, add } = useContext(ReactContext);
-  const [quantity, setQuantity] = useState(1); 
-  const increament = (product) => {
-    add(product);
-  };
+  const { itemsinCart } = useContext(ReactContext);
+  const [cartLoader, setCartLoader] = useState(true);
 
-  const [cartLoader, setcartLoader] = useState(true);
+  const [quantities, setQuantities] = useState({});
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setcartLoader(false); 
-    }, 500); 
-    return () => clearTimeout(timer); 
+    setTimeout(() => {
+      setCartLoader(false);
+    }, 500);
   }, []);
 
-  const noProduct = <h1 className='noAdded'>No Products in Cart</h1>;
+  const handleQuantityChange = (productId, value) => {
+    const updatedQuantities = { ...quantities };
+    if (value === '' || Number(value) < 1) {
+      updatedQuantities[productId] = 1;
+    } else {
+      updatedQuantities[productId] = Number(value);
+    }
+    setQuantities(updatedQuantities);
+  };
 
   return (
-    <div className='cartContainer'>
+    <div className="cartContainer">
       <h1 className="cartHeading">Shopping Cart</h1>
 
       {cartLoader ? (
         <div className="loaderWrapper">
-          <MoonLoader  color="#2b303b" size={50} />
+          <MoonLoader color="#2b303b" size={50} />
         </div>
-      ) : (
-        <>
-          {itemsinCart.length > 0 ? (
-            itemsinCart.map((product, index) => (
-              <div className="cartItem" key={index}>
-                <div className="cartProductDetails">
-                  <div className="cartImageWrapper">
-                    <img src={product.images[0]} alt={product.title} />
-                  </div>
-                  <div className="cartTextInfo">
-                    <p>{product.category}</p>
-                    <h1>{product.title}</h1>
-                    <h2>$ {(product.price * quantity).toFixed(2)}</h2>
-                  </div>
+      ) : itemsinCart.length > 0 ? (
+        itemsinCart.map((product) => {
+          const quantity = quantities[product.id] !== undefined
+            ? quantities[product.id]
+            : 1;
+
+          return (
+            <div className="cartItem" key={product.id}>
+              <div className="cartProductDetails">
+                <div className="cartImageWrapper">
+                  <img src={product.images[0]} alt={product.title} />
                 </div>
-                <div className="cartRemoveIcon">
-                  <i className="bi bi-trash3"></i>
-                  <p className='quantityProduct'>
-                    Quantity: 
-                    <input
-                      type='number'
-                      className='quantityInput'
-                      onChange={(e) => setQuantity(e.target.value)}
-                      value={quantity}
-                    />
-                  </p>
-                  {/* <p className='increment-button' onClick={() => increament(product)}>+1</p> */}
+                <div className="cartTextInfo">
+                  <p>{product.category}</p>
+                  <h1>{product.title}</h1>
+                  <h2>$ {(product.price * quantity).toFixed(2)}</h2>
                 </div>
               </div>
-            ))
-          ) : (
-            noProduct
-          )}
-        </>
+
+              <div className="cartRemoveIcon">
+                <i className="bi bi-trash3"></i>
+                <p className="quantityProduct">
+                  Quantity:
+                  <input
+                    type="number"
+                    className="quantityInput"
+                    min="1"
+                    value={quantity}
+                    onChange={(e) =>
+                      handleQuantityChange(product.id, e.target.value)
+                    }
+                  />
+                </p>
+              </div>
+            </div>
+          );
+        })
+      ) : (
+        <h1 className="noAdded">No Products in Cart</h1>
       )}
     </div>
   );

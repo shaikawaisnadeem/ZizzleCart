@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useCallback, useContext } from 'react';
 import './Navbar.css';
 import { useNavigate } from 'react-router-dom';
 import ProductSearch from '../ProdcuctSearch/ProductSearch.jsx';
+import ReactContext from '../../Context/ReactContext.jsx';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -13,6 +14,7 @@ const Navbar = () => {
   const openWishlist = () => {
     navigate('/WishList');
   };
+  const {itemsinCart} = useContext(ReactContext)
 
   return (
     <nav className="custom-navbar">
@@ -26,6 +28,7 @@ const Navbar = () => {
       <div className="nav-buttons">
         <a href="#" className="icon-wrapper" onClick={addCart}>
           <i className="bi bi-cart3"></i>
+          <p className='cart-count'>{itemsinCart.length}</p>
         </a>
         <a href="#" className="icon-wrapper" onClick={openWishlist}>
           <i className="bi bi-heart"  ></i>
