@@ -4,7 +4,7 @@ import './AddToCart.css';
 import { MoonLoader } from 'react-spinners';
 
 const AddToCart = () => {
-  const { itemsinCart,setItemsInCart } = useContext(ReactContext);
+  const { itemsinCart, setItemsInCart } = useContext(ReactContext);
   const [cartLoader, setCartLoader] = useState(true);
 
   const [quantities, setQuantities] = useState({});
@@ -14,20 +14,31 @@ const AddToCart = () => {
       setCartLoader(false);
     }, 300);
   }, []);
- const deleteItemFromCart = (productId) => {
-  const updatedItems = itemsinCart.filter(item => item.id !== productId);
-  setItemsInCart(updatedItems);
-};
+  const deleteItemFromCart = (productId) => {
+    const updatedItems = itemsinCart.filter(item => item.id !== productId);
+    setItemsInCart(updatedItems);
+  };
 
   const handleQuantityChange = (productId, value) => {
-    const updatedQuantities = { ...quantities };
-    if (value === '' || Number(value) < 1) {
-      updatedQuantities[productId] = 1;
-    } else {
-      updatedQuantities[productId] = Number(value);
-    }
+  const updatedQuantities = { ...quantities };
+
+  if (value === '') {
+    updatedQuantities[productId] = ''; 
     setQuantities(updatedQuantities);
-  };
+    return;
+  }
+
+  const numValue = Number(value);
+
+  if (numValue <= 1 || isNaN(numValue)) {
+    updatedQuantities[productId] = 1; 
+  }else {
+    updatedQuantities[productId] = numValue;
+  }
+
+  setQuantities(updatedQuantities);
+};
+
 
   return (
     <div className="cartContainer">
@@ -63,7 +74,7 @@ const AddToCart = () => {
                   <input
                     type="number"
                     className="quantityInput"
-                    min="1"
+                    min="0"
                     value={quantity}
                     onChange={(e) =>
                       handleQuantityChange(product.id, e.target.value)

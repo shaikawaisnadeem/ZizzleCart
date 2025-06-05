@@ -11,6 +11,8 @@ const Promotional = () => {
         <p>⚡ Flash Sale: Up to 50% Off</p>
       </div>
     </div>
+   
+    
   )
 }
 
