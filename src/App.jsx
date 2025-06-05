@@ -10,6 +10,7 @@ import ScrollToTop from './components/ScrollToTop/ScrollToTop.jsx'
 import ReactContext from './Context/ReactContext.jsx'
 import AddToCart from './components/AddToCart/AddToCart.jsx'
 import WishList from './components/WishList/WishList.jsx'
+import Promotional from './components/promotionalDiv/Promotional.jsx'
 
 const App = () => {
   const [itemsinCart,setItemsInCart] = useState([])
@@ -49,7 +50,8 @@ console.log(itemsinwish)
        <ReactContext.Provider value={{ itemsinCart, setItemsInCart, add, itemsinwish, wishadd }}>
     <ScrollToTop/>
       <Navbar/>
-      <div style={{display:"flex", margin: "20px",marginLeft:"25px",paddingTop:"80px"}}>
+      <Promotional/>
+      <div style={{display:"flex", margin: "40px 20px",marginLeft:"25px",paddingTop:"80px"}}>
         <SideCategory />
        
         <Routes>
