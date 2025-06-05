@@ -11,6 +11,7 @@ import ReactContext from './Context/ReactContext.jsx'
 import AddToCart from './components/AddToCart/AddToCart.jsx'
 import WishList from './components/WishList/WishList.jsx'
 import Promotional from './components/promotionalDiv/Promotional.jsx'
+import Footer from './components/Footer/Footer.jsx'
 
 const App = () => {
   const [itemsinCart,setItemsInCart] = useState([])
@@ -64,6 +65,7 @@ console.log(itemsinwish)
         </Routes>
         
       </div>
+      <Footer/>
       </ReactContext.Provider>
     </BrowserRouter>
   )
